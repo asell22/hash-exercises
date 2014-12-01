@@ -1,29 +1,43 @@
 require 'spec_helper'
 
 describe 'creating hashes' do
+
   let(:___) { nil }
+  let(:dogs) { dog_data }
 
-  let(:dogs) {
-    ___ # change this to the hash that will get tests passing!
-  }
+    def dog_data
+      {
+      "Harleigh" => {:favorite_toy => "frog", :sports => ["frisbee", "hiking"],
 
-  xit "retuns the dogs names" do
+
+      },
+
+
+      "Trixie" => {:favorite_food => "steak", :sports => [:swimming, :prancing]
+
+      },
+      }
+    end
+     # change this to the hash that will get tests passing
+
+
+  it "retuns the dogs names" do
     expect( dogs.keys ).to be == ["Harleigh", "Trixie"]
   end
 
-  xit "returns Harleigh's favorite toy" do
+  it "returns Harleigh's favorite toy" do
     expect(dogs['Harleigh'][:favorite_toy]).to be == "frog"
   end
 
-  xit "returns Trixie's favorite food" do
+  it "returns Trixie's favorite food" do
     expect(dogs['Trixie'][:favorite_food]).to be == 'steak'
   end
 
-  xit "returns Harleigh's favorite sports" do
+  it "returns Harleigh's favorite sports" do
     expect(dogs['Harleigh'][:sports]).to be == ["frisbee", "hiking"]
   end
 
-  xit "returns Trixies favorite sports" do
-    expect(dogs['Harleigh'][:sports]).to be == [:swimming, :prancing]
+  it "returns Trixies favorite sports" do
+    expect(dogs['Trixie'][:sports]).to be == [:swimming, :prancing]
   end
 end
